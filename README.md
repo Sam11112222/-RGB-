@@ -29,6 +29,7 @@ RGB灯模块	通用I2C RGB灯模块	I2C (SDA/GPIO3,- SCL/GPIO5)	I2C地址默认0
 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install -y --force-yes python3-tk python3-smbus
+
 ◦ python3-tk：Tkinter 图形界面库（系统级依赖）
 ◦ python3-smbus：I2C 通信库（用于硬件控制）
 
@@ -41,29 +42,21 @@ sudo apt-get install -y --force-yes python3-tk python3-smbus
 
 
  安装步骤
-1. 克隆项目到树莓派
-
-git clone https://github.com/Sam11112222/rgb_app.git
-cd rgb_app
-2. 赋予脚本执行权限
-
+将三个文件打包下载下来后
+把ru_rgb_app.sh文件移动到/home目录下
+把rgb_app.py移动到/home/你设置的用户名 目录下
+最后将rgb_app.desktop移动到桌面上即可
 
 • 确保RGB灯和风扇通过I2C正确连接树莓派
 • 启用I2C功能：sudo raspi-confg → Interface Options → 启用 I2C
 
- 使用方法
-
-
-
-
-
+ 使用方法1:
 1. 启动程序
-
+在终端下cd到用户文件夹下（/home/你设置的用户名）
 
 python3 rgb_app.py
 
-
-2. 图形界面操作
+3. 图形界面操作
 
 RGB灯控制
 ◦ 预设颜色：通过下拉菜单快速选择红/绿/蓝等常用颜色
@@ -80,21 +73,19 @@ RGB灯控制
 ◦ 中温（低温~高温阈值）：风扇50%，灯光黄色
 ◦ 高温(≥ 高温阈值）：风扇全速，灯光红色
 
- 故障排除
+方法2:
+双击桌面上的rgb app快捷方式，选择左边第一个按钮，即可打开
 
+ 故障排除
 1. I2C设备未识别
 ◦ 检查硬件连接是否松动，重启树莓派
-◦ 使用 sudo i2cdetect -y 1 确认RGB灯地址（0x0d） 存在
-
-
-
+◦ 使用 sudo i2cdetect -y 1 确认RGB灯地址（0x0d） 存
 
 2. 依赖安装错误
 ◦ 若 apt-get 提示依赖冲突，使用强制安装（风险提示：可能破坏系统）：
 
 sudo apt-get install -y --allow-downgrades --allow-remove-essential --allow--
 change-held-packages python3-tk python3-smbus
-
 
 3. 自动调节失效
 ◦ 检查CPU温度路径是否正确（树莓派默认路径为/sys/class/thermal/thermal_zone0/temp）
