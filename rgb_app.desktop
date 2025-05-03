@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=RGB App
+Comment=Run RGB App Script
+Exec=/home/run_rgb_app.sh
+Icon=python
+Terminal=true
+Type=Application
+Categories=Utility;
