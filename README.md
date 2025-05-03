@@ -94,7 +94,7 @@ change-held-packages python3-tk python3-smbus
  贡献与反馈
 1. 提交问题：在GitHub仓库创建新Issue，描述问题细节和复现步骤
 2. 提交PR：点击仓库页面的 Fork 按钮，修改后提交Pull Request
-3. 联系方式：通过GitHub私信与作者沟通
+3. 联系方式：通过GitHub私信与作者沟通,邮箱为18157376382@163.com或sam12166507@gmail.com
 
  许可证
 本项目采用 MIT许可证，允许自由使用、修改和分发，但需保留原作者声明。
